@@ -1,24 +1,36 @@
+
 <template>
   <section>
     <header class="header">
       <div class="navbar">
-        <svg class="navbar__logo">
-          <use xlink:href="../assets/sprites.svg#icon-twitch"></use>
-        </svg>
+        <twitch-icon></twitch-icon>
         <div class="navbar__text-box">
-          <p class="navbar__text">Following</p>
+          <!-- <p class="navbar__text">Following</p> -->
           <p class="navbar__text">Browse</p>
         </div>
-        <svg class="navbar__hdots">
-          <use xlink:href="@/assets/SVG/bubbles3.svg"></use>
-        </svg>
+        <horizontal-dots></horizontal-dots>
+        <div class="navbar__search">
+          here the search bar
+        </div>
+
       </div>
     </header>
   </section>
 </template>
 
 <script>
-export default {};
+// import {ref} from 'vue';
+import TwitchIcon from "./TwitchIcon";
+import HorizontalDots from "./HorizontalDots";
+
+export default {
+  setup() {
+    return {
+      TwitchIcon,
+      HorizontalDots,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -28,14 +40,20 @@ export default {};
   display: flex;
 
   align-items: center;
+  overflow: hidden;
 
-  &__logo {
+  &__icon {
     width: 2rem;
-    fill: #9147ff;
+    height: 2rem;
+    // for testing
+    border: solid 1px #9147ff;
+
+    &--logo {
+      fill: #9147ff;
+    }
   }
   &__text-box {
     display: flex;
-    margin-left: auto;
   }
   &__text {
   }
