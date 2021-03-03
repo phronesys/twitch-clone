@@ -21,8 +21,14 @@ export default {};
   border-radius: 4px;
   padding: 0.9rem;
   outline: none;
+  &:hover {
+    background-color: var(--color-grey-dark-4);
+  }
   &--primary {
     background-color: var(--color-primary);
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
   }
   &__login {
     margin: -0.2rem 0.3rem;

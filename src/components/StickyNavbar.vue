@@ -4,8 +4,10 @@
     <div class="navbar">
       <twitch-icon class="navbar__icon navbar__icon--logo"></twitch-icon>
       <div class="navbar__left">
-        <h2 v-if="isLogged" class="navbar__left--text">Following</h2>
-        <h2 class="navbar__left--text">Browse</h2>
+        <router-link to="/" v-if="isLogged" class="navbar__left--text"
+          >Following</router-link
+        >
+        <router-link to="/about" class="navbar__left--text">Browse</router-link>
       </div>
       <horizontal-dots
         class="navbar__icon navbar__icon--light"
@@ -23,7 +25,10 @@
           <base-button @click="logIn">Log In</base-button>
           <base-button class="btn--primary">Sign Up</base-button>
         </div>
-        <user-icon v-if="!isLogged" class="navbar__icon navbar__icon--light"></user-icon>
+        <user-icon
+          v-if="!isLogged"
+          class="navbar__icon navbar__icon--light"
+        ></user-icon>
         <!-- logged icons -->
         <div v-else class="navbar__right--logged-in">
           <notification-icon
@@ -91,16 +96,34 @@ export default {
   display: flex;
 
   align-items: center;
-  overflow: hidden;
+  // overflow: hidden;
   background-color: var(--color-navbar);
   border-bottom: 2px solid black;
   &__left {
     display: flex;
     align-items: center;
     &--text {
-      font-size: 1.5rem;
-      margin-right: 2rem;
-      margin-left: 2rem;
+      text-decoration: none;
+      // background-color: white;
+      margin: 2rem;
+      padding:1rem 0;
+      color: var(--color-grey-light);
+      align-self: stretch;
+      font-weight: 800;
+      font-size: 1.8rem;
+      // margin-right: 2rem;
+      // margin-left: 2rem;
+      &:hover {
+        color: var(--color-primary);
+      }
+      // &:active {
+      //   color: var(--color-primary);
+      // }
+      animation: all 1s;
+      &.router-link-active {
+        color: var(--color-primary-light);
+        border-bottom: solid 2.5px var(--color-primary-light);
+      }
     }
   }
   &__right {
@@ -114,7 +137,7 @@ export default {
     &--logged-out {
       display: flex;
       align-items: center;
-      margin: -.5rem 0.3rem;
+      margin: -0.5rem 0.3rem;
     }
   }
 
@@ -136,7 +159,11 @@ export default {
     &--logo {
       width: 3.7rem;
       height: 3.7rem;
+      background-color: white;
       fill: var(--color-primary);
+      &:hover {
+        background-color: inherit;
+      }
     }
     &--light {
       fill: var(--color-grey-light);

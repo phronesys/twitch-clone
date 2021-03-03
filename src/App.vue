@@ -1,7 +1,6 @@
 <template>
   <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    
   </div> -->
   <sticky-navbar></sticky-navbar>
   <router-view />
@@ -55,6 +54,8 @@ html {
   --color-magnifying: #5a5a5c;
 
   --color-primary: #9147ff;
+  --color-primary-light: #a970ff;
+  --color-primary-dark: #7f2aff;
 
   --color-grey-light:#efeff1;
   --color-grey-dark-1: #1f1f23;
