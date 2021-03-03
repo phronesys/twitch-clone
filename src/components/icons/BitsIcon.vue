@@ -6,9 +6,11 @@
 </template>
 
 <style lang="scss" scoped>
-.size {
-  width: 1.5rem;
-  padding: 0;
-  margin: 0 0rem;
+svg {
+  width: 1.8rem;
+  height: 1.4rem;
+  fill: var(--color-grey-light);
+  margin-right: .5rem;
+  margin-left: -.5rem;
 }
 </style>

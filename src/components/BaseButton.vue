@@ -5,18 +5,27 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-.btn{
-  background-color: var(--color-grey-dark-2);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
+<style lang="scss">
+.btn {
+  text-align: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  border: none;
   outline: none;
+  background-color: var(--color-grey-dark-3);
+  color: var(--color-grey-light);
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.9rem;
+  outline: none;
+  &--primary {
+    background-color: var(--color-primary);
+  }
+  &__login {
+    margin: -0.2rem 0.3rem;
+  }
 }
-
 </style>

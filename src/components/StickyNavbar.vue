@@ -4,31 +4,37 @@
     <div class="navbar">
       <twitch-icon class="navbar__icon navbar__icon--logo"></twitch-icon>
       <div class="navbar__left">
-        <h3 v-if="isLogged" class="navbar__left--text">Following</h3>
-        <h3 class="navbar__left--text">Browse</h3>
+        <h2 v-if="isLogged" class="navbar__left--text">Following</h2>
+        <h2 class="navbar__left--text">Browse</h2>
       </div>
-      <horizontal-dots class="navbar__icon navbar__icon--light"></horizontal-dots>
+      <horizontal-dots
+        class="navbar__icon navbar__icon--light"
+      ></horizontal-dots>
       <form class="search">
         <input type="text" placeholder="Search" class="search__input" />
         <button class="search__button">
-          <search-icon class="navbar__icon navbar__icon--light"></search-icon>
+          <search-icon class="navbar__icon--magnifying"></search-icon>
         </button>
       </form>
       <div class="navbar__right">
         <prime-icon class="navbar__icon navbar__icon--light"></prime-icon>
-        <!-- not logged -->
+        <!-- not logged icons -->
         <div v-if="!isLogged" class="navbar__right--logged-out">
-          <button @click="logIn">Log In</button>
-          <button>Sign Up</button>
-          <user-icon class="navbar__icon navbar__icon--light"></user-icon>
+          <base-button @click="logIn">Log In</base-button>
+          <base-button class="btn--primary">Sign Up</base-button>
         </div>
-        <!-- logged -->
+        <user-icon v-if="!isLogged" class="navbar__icon navbar__icon--light"></user-icon>
+        <!-- logged icons -->
         <div v-else class="navbar__right--logged-in">
-          <notification-icon class="navbar__icon navbar__icon--light"></notification-icon>
+          <notification-icon
+            class="navbar__icon navbar__icon--light"
+          ></notification-icon>
           <whisper-icon class="navbar__icon navbar__icon--light"></whisper-icon>
-          <base-button class="navbar__icon--bits">
-            <bits-icon class="navbar__icon navbar__icon--light"></bits-icon>
-            Get Bits
+          <base-button>
+            <div class="navbar__button">
+              <bits-icon></bits-icon>
+              Get Bits
+            </div>
           </base-button>
           <div class="navbar__picture">
             <!-- <img src="../../public/img/runescape.png" alt="default user" /> -->
@@ -80,19 +86,21 @@ export default {
 
 <style lang="scss">
 .navbar {
-  margin: -8px -6px;
-  height: 3rem;
+  // margin: -8px -6px;
+  height: 5rem;
   display: flex;
 
   align-items: center;
   overflow: hidden;
   background-color: var(--color-navbar);
+  border-bottom: 2px solid black;
   &__left {
     display: flex;
     align-items: center;
     &--text {
-      margin-right: 1rem;
-      margin-left: 1.5rem;
+      font-size: 1.5rem;
+      margin-right: 2rem;
+      margin-left: 2rem;
     }
   }
   &__right {
@@ -103,42 +111,94 @@ export default {
       display: flex;
       align-items: center;
     }
+    &--logged-out {
+      display: flex;
+      align-items: center;
+      margin: -.5rem 0.3rem;
+    }
   }
 
   &__icon {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
     cursor: pointer;
     // for testing
     // border: solid 1px #9147ff;
-    margin: 0 1rem;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 0 0.6rem;
+    align-self: center;
+
+    &:hover {
+      background-color: #464648;
+    }
 
     &--logo {
-      width: 1.7rem;
-      height: 1.7rem;
+      width: 3.7rem;
+      height: 3.7rem;
       fill: var(--color-primary);
-    }
-    &--bits {
-      align-self: stretch;
     }
     &--light {
       fill: var(--color-grey-light);
     }
+    &--magnifying {
+      fill: var(--color-magnifying);
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    margin: -0.2rem 0.3rem;
   }
   &__picture {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     margin: 0 0.7rem;
-    background-color: var(--color-grey-dark-1);
+    background-color: var(--color-primary);
     border-radius: 50%;
     background-image: url("../../public/img/runescape.png");
     background-size: cover;
   }
 }
 .search {
+  flex: 0 0 25%;
   margin: 7px auto;
   align-self: stretch;
   display: flex;
-  align-items: stretch;
+
+  &__input {
+    font-family: inherit;
+    border-radius: 6px 0 0 6px;
+    min-width: 37rem;
+    max-width: 37rem;
+    border: none;
+    padding-left: 1.5rem;
+    margin-right: 0.1rem;
+
+    // font-size: inherit;
+    background-color: var(--color-grey-dark-4);
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--color-primary);
+      background-color: #000;
+      outline-offset: 0;
+    }
+    &::-webkit-input-placeholder {
+      font-weight: 500;
+      color: var(--color-grey-light);
+    }
+  }
+  // &__input:focus + &__button {
+  //   background-color: #000;
+  // }
+  &__button {
+    background-color: var(--color-grey-dark-2);
+    border-radius: 0 6px 6px 0;
+    padding: 0 0.5rem;
+    border: none;
+  }
 }
 </style>
