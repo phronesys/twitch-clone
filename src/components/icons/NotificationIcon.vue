@@ -1,5 +1,5 @@
 <template>
-  <svg class="navbar__icon navbar__icon--light">
+  <svg>
     <use xlink:href="@/../public/img/sprites.svg#icon-drawer2"></use>
   </svg>
 </template>

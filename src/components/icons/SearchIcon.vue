@@ -1,5 +1,5 @@
 <template>
-  <svg class="navbar__icon ">
+  <svg>
     <use xlink:href="@/../public/img/sprites.svg#icon-magnifying-glass"></use>
   </svg>
 </template>

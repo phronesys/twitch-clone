@@ -2,33 +2,37 @@
 <template>
   <section>
     <div class="navbar">
-      <twitch-icon></twitch-icon>
+      <twitch-icon class="navbar__icon navbar__icon--logo"></twitch-icon>
       <div class="navbar__left">
-        <p v-if="isLogged">Following</p>
-        <p>Browse</p>
+        <h3 v-if="isLogged" class="navbar__left--text">Following</h3>
+        <h3 class="navbar__left--text">Browse</h3>
       </div>
-      <horizontal-dots></horizontal-dots>
+      <horizontal-dots class="navbar__icon navbar__icon--light"></horizontal-dots>
       <form class="search">
         <input type="text" placeholder="Search" class="search__input" />
         <button class="search__button">
-          <search-icon></search-icon>
+          <search-icon class="navbar__icon navbar__icon--light"></search-icon>
         </button>
       </form>
       <div class="navbar__right">
-        <prime-icon></prime-icon>
+        <prime-icon class="navbar__icon navbar__icon--light"></prime-icon>
         <!-- not logged -->
-        <button v-if="!isLogged" @click="logIn">Log In</button>
-        <button v-if="!isLogged">Sign Up</button>
-        <user-icon v-if="!isLogged"></user-icon>
+        <div v-if="!isLogged" class="navbar__right--logged-out">
+          <button @click="logIn">Log In</button>
+          <button>Sign Up</button>
+          <user-icon class="navbar__icon navbar__icon--light"></user-icon>
+        </div>
         <!-- logged -->
-        <notification-icon v-if="isLogged"></notification-icon>
-        <whisper-icon v-if="isLogged"></whisper-icon>
-        <base-button v-if="isLogged">
-          Get Bits
-          <bits-icon></bits-icon>
-        </base-button>
-        <div class="navbar__picture">
-          <!-- <img src="../../public/img/runescape.png" alt="default user" /> -->
+        <div v-else class="navbar__right--logged-in">
+          <notification-icon class="navbar__icon navbar__icon--light"></notification-icon>
+          <whisper-icon class="navbar__icon navbar__icon--light"></whisper-icon>
+          <base-button class="navbar__icon--bits">
+            <bits-icon class="navbar__icon navbar__icon--light"></bits-icon>
+            Get Bits
+          </base-button>
+          <div class="navbar__picture">
+            <!-- <img src="../../public/img/runescape.png" alt="default user" /> -->
+          </div>
         </div>
       </div>
     </div>
@@ -77,6 +81,7 @@ export default {
 <style lang="scss">
 .navbar {
   margin: -8px -6px;
+  height: 3rem;
   display: flex;
 
   align-items: center;
@@ -85,22 +90,36 @@ export default {
   &__left {
     display: flex;
     align-items: center;
+    &--text {
+      margin-right: 1rem;
+      margin-left: 1.5rem;
+    }
   }
   &__right {
     display: flex;
     align-items: center;
+    justify-content: center;
+    &--logged-in {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.2rem;
+    height: 1.2rem;
     cursor: pointer;
     // for testing
     // border: solid 1px #9147ff;
     margin: 0 1rem;
 
     &--logo {
+      width: 1.7rem;
+      height: 1.7rem;
       fill: var(--color-primary);
+    }
+    &--bits {
+      align-self: stretch;
     }
     &--light {
       fill: var(--color-grey-light);
@@ -109,16 +128,16 @@ export default {
   &__picture {
     width: 2.5rem;
     height: 2.5rem;
-    background-color: var(--color-grey-dark);
+    margin: 0 0.7rem;
+    background-color: var(--color-grey-dark-1);
     border-radius: 50%;
     background-image: url("../../public/img/runescape.png");
     background-size: cover;
-
   }
-
 }
 .search {
-  margin: 0 auto;
+  margin: 7px auto;
+  align-self: stretch;
   display: flex;
   align-items: stretch;
 }

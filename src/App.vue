@@ -43,7 +43,9 @@ html {
   --color-primary: #9147ff;
 
   --color-grey-light:#efeff1;
-  --color-grey-dark: #1f1f23;
+  --color-grey-dark-1: #1f1f23;
+  --color-grey-dark-2: #3a3a3d; 
+  --color-grey-dark-3: #464648;
 
 }
 </style>
