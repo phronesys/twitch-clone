@@ -1,36 +1,49 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
+  <sticky-navbar></sticky-navbar>
   <router-view />
 </template>
 
 <script>
+import StickyNavbar from './components/StickyNavbar';
 export default {
-  setup() {},
+  setup() {
+    return{
+      StickyNavbar
+    }
+  },
 };
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  // text-align: center;
+  color: var(--color-grey-light);
   // background-color: black;
 }
+html {
+  background-color: var(--color-bg);
+}
 
-#nav {
-  padding: 30px;
+:root {
+  --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  //colors
+  --color-bg:#0e0e10;
+  --color-navbar: #18181b;
+
+  --color-primary: #9147ff;
+
+  --color-grey-light:#efeff1;
+  --color-grey-dark: #1f1f23;
+
 }
 </style>
