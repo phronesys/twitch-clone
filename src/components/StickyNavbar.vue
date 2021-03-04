@@ -20,6 +20,7 @@
       </form>
       <div class="navbar__right">
         <prime-icon class="navbar__icon navbar__icon--light"></prime-icon>
+        <span class="navbar__notification">7</span>
         <!-- not logged icons -->
         <div v-if="!isLogged" class="navbar__right--logged-out">
           <base-button @click="logIn">Log In</base-button>
@@ -34,6 +35,7 @@
           <notification-icon
             class="navbar__icon navbar__icon--light"
           ></notification-icon>
+          <span class="navbar__notification">15</span>
           <whisper-icon class="navbar__icon navbar__icon--light"></whisper-icon>
           <base-button>
             <div class="navbar__button">
@@ -41,9 +43,8 @@
               Get Bits
             </div>
           </base-button>
-          <div class="navbar__picture">
-            <!-- <img src="../../public/img/runescape.png" alt="default user" /> -->
-          </div>
+          <div class="navbar__picture"></div>
+          <span class="navbar__picture--status"></span>
         </div>
       </div>
     </div>
@@ -106,7 +107,7 @@ export default {
       text-decoration: none;
       // background-color: white;
       margin: 2rem;
-      padding:1rem 0;
+      padding: 1rem 0;
       color: var(--color-grey-light);
       align-self: stretch;
       font-weight: 800;
@@ -147,9 +148,9 @@ export default {
     cursor: pointer;
     // for testing
     // border: solid 1px #9147ff;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 5px;
-    margin: 0 0.6rem;
+    margin: 0 0rem;
     align-self: center;
 
     &:hover {
@@ -174,6 +175,21 @@ export default {
       height: 2.5rem;
     }
   }
+  &__notification {
+    background-color: var(--color-notification);
+    color: var(--color-grey-light);
+    font-weight: 700;
+    font-size: 0.8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 1000px;
+    position: relative;
+    top: -0.8rem;
+    right: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__button {
     display: flex;
     align-items: center;
@@ -187,6 +203,12 @@ export default {
     border-radius: 50%;
     background-image: url("../../public/img/runescape.png");
     background-size: cover;
+    &--status {
+      width: 1rem;
+      height: 1rem;
+      color: var(--color-connected);
+      z-index: 20;
+    }
   }
 }
 .search {

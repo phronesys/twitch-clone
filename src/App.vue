@@ -52,6 +52,8 @@ html {
   --color-navbar: #18181b;
   --color-sidebar: var(--color-grey-dark-1);
   --color-magnifying: #5a5a5c;
+  --color-notification: #e91916;
+  --color-connected: #00f593;
 
   --color-primary: #9147ff;
   --color-primary-light: #a970ff;
@@ -62,6 +64,7 @@ html {
   --color-grey-dark-2: #29292b;
   --color-grey-dark-3: #3a3a3d; 
   --color-grey-dark-4: #464648;
+
 
 }
 </style>
