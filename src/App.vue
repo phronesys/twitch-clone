@@ -29,7 +29,6 @@ body {
   // text-align: center;
   color: var(--color-grey-light);
   // background-color: black;
-  min-height: 100vh;
 }
 * {
   padding: 0;
@@ -39,6 +38,9 @@ html {
   background-color: var(--color-bg);
   box-sizing: border-box;
   font-size: 62.5%;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 *,
 *::before,

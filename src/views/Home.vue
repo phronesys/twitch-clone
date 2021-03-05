@@ -21,6 +21,10 @@ export default {
 .home {
   margin-top: 5rem;
   display: flex;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
 }
 .sidebar {
   position: fixed;

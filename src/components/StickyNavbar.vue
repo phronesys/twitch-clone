@@ -44,7 +44,7 @@
             </div>
           </base-button>
           <div class="navbar__picture"></div>
-          <span class="navbar__picture--status"></span>
+          <span class="navbar__picture--status">&bull;</span>
         </div>
       </div>
     </div>
@@ -204,10 +204,20 @@ export default {
     background-image: url("../../public/img/runescape.png");
     background-size: cover;
     &--status {
-      width: 1rem;
-      height: 1rem;
+      position: relative;
+      right: 1.8rem;
+      top: 1rem;
+      font-size: 2rem;
       color: var(--color-connected);
       z-index: 20;
+      background-color: black;
+      border-radius: 10000px;
+      height: .9rem;
+      width: .9rem;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
