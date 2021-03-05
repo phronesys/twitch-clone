@@ -2,22 +2,25 @@
   <!-- <div id="nav">
     
   </div> -->
-  <sticky-navbar></sticky-navbar>
+  <sticky-navbar class="header"></sticky-navbar>
+  <side-bar class="sidebar"></side-bar>
   <router-view />
 </template>
 
 <script>
-import StickyNavbar from './components/StickyNavbar';
+import StickyNavbar from "./components/StickyNavbar";
+import SideBar from "./components/SideBar";
 export default {
   setup() {
-    return{
-      StickyNavbar
-    }
+    return {
+      StickyNavbar,
+      SideBar
+    };
   },
 };
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 body {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
   font-family: var(--font);
@@ -42,13 +45,19 @@ html {
 *::after {
   box-sizing: inherit;
 }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
 
 :root {
   --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-
   //colors
-  --color-bg:#0e0e10;
+  --color-bg: #0e0e10;
   --color-navbar: #18181b;
   --color-sidebar: var(--color-grey-dark-1);
   --color-magnifying: #5a5a5c;
@@ -59,12 +68,10 @@ html {
   --color-primary-light: #a970ff;
   --color-primary-dark: #7f2aff;
 
-  --color-grey-light:#efeff1;
+  --color-grey-light: #efeff1;
   --color-grey-dark-1: #1f1f23;
   --color-grey-dark-2: #29292b;
-  --color-grey-dark-3: #3a3a3d; 
+  --color-grey-dark-3: #3a3a3d;
   --color-grey-dark-4: #464648;
-
-
 }
 </style>
