@@ -1,4 +1,7 @@
 # twitch-clone2
+I'm building this front end from scratch, just watching at twitch's website and occasionally checking the dev tools 
+
+
 
 ## Project setup
 ```
