@@ -58,10 +58,13 @@ html {
 :root {
   --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  --shadow: 0 2px 4px rgba(0,0,0,.9);
+  --shadow-op: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.9);
   //colors
   --color-bg: #0e0e10;
   --color-navbar: #18181b;
   --color-sidebar: var(--color-grey-dark-1);
+  --color-sidebar-hover: #2a282eb0;
   --color-magnifying: #5a5a5c;
   --color-notification: #e91916;
   --color-connected: #00f593;
@@ -71,6 +74,8 @@ html {
   --color-primary-dark: #7f2aff;
 
   --color-grey-light: #efeff1;
+  --color-grey-light-2: #c0c0c0;
+
   --color-grey-dark-1: #1f1f23;
   --color-grey-dark-2: #29292b;
   --color-grey-dark-3: #3a3a3d;

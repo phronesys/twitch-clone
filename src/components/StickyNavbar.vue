@@ -95,11 +95,13 @@ export default {
   // margin: -8px -6px;
   height: 5rem;
   display: flex;
+  z-index: 100;
 
   align-items: center;
   // overflow: hidden;
   background-color: var(--color-navbar);
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
+  box-shadow: var(--shadow-op);
   &__left {
     display: flex;
     align-items: center;
@@ -160,7 +162,8 @@ export default {
     &--logo {
       width: 3.7rem;
       height: 3.7rem;
-      background-color: white;
+      margin-left: .5rem;
+      background-color: inherit;
       fill: var(--color-primary);
       &:hover {
         background-color: inherit;
