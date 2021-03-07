@@ -1,59 +1,55 @@
 <template>
-  <div class="home">
-    <video-content class="content"></video-content>
-    <div class="bar__scroll"></div>
+  <div class="video">
+    <vueper-slides bullets-outside :dragging-distance="50">
+      <vueper-slide
+        v-for="(slide, i) in slides"
+        :key="i"
+        :video="slide.video"
+      />
+    </vueper-slides>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import VideoContent from "../components/VideoContent";
-
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 export default {
-  name: "Home",
+  data: () => ({
+    slides: [
+      {video: "https://youtube.com/embed/8TCxE0bWQeQ?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"},
+      {
+        video:
+          "https://youtube.com/embed/Z_DWo_HqXws?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
+      {video:"https://youtube.com/embed/c7BVtGnlxT8?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"},
+      {
+        video:
+          "https://www.youtube.com/embed/2Jk26leBaEc?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
+      {
+        video: "https://youtube.com/embed/dddR4ZpTDC0?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"
+      }
+    ],
+  }),
   components: {
-    VideoContent,
+    VueperSlides,
+    VueperSlide,
   },
-  setup() {},
 };
 </script>
 
 <style lang="scss">
-.home {
-  margin-top: 5rem;
-  display: flex;
-  // overflow-y: scroll;
-  overflow: auto;
-}
-.content {
-  margin-left: 24rem;
-  flex: 1;
-  //testing
-  height: 120vh;
-}
-.bar {
-  &__scroll {
-    width: 1rem;
-    overflow: auto;
-    // background-color: white;
-    min-height: 10px;
-    box-shadow: 0 0 1px 1px hsl(0deg 0% 100% / 25%);
-    background-color: var(--color-grey-dark-1);
-  }
+.video {
+  margin: 0 auto;
+  width: 30rem;
+  height: 20rem;
+  // background-color: var(--color-grey-light);
 
-  &__scroll::-webkit-scrollbar-track {
-    background-color: red;
+  &__slides {
+    color: var(--color-grey-light);
   }
-
-  &__scroll::-webkit-scrollbar {
-    width: 12px;
-    background-color: #f5f5f5;
-  }
-
-  &__scroll::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #555;
+  &__slide {
+    color: var(--color-grey-light);
   }
 }
 </style>

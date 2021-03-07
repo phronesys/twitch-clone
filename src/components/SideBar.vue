@@ -126,17 +126,15 @@ export default {
 
 <style lang="scss">
 .sidebar {
+  flex: 0 0 24rem;
   overflow-y: scroll;
-  position: fixed;
-  width: 24rem;
+  // width: 24rem;
   background-color: var(--color-sidebar);
   height: 95vh;
-  z-index: 10;
 
   top: 0;
   left: 0;
   margin: auto;
-  margin-top: 5rem;
   &__title-box {
     display: flex;
     padding: 1.6rem 1rem;

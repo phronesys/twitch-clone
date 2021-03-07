@@ -12,12 +12,8 @@
       <horizontal-dots
         class="navbar__icon navbar__icon--light"
       ></horizontal-dots>
-      <form class="search">
-        <input type="text" placeholder="Search" class="search__input" />
-        <button class="search__button">
-          <search-icon class="navbar__icon--magnifying"></search-icon>
-        </button>
-      </form>
+      <search-bar></search-bar>
+      
       <div class="navbar__right">
         <prime-icon class="navbar__icon navbar__icon--light"></prime-icon>
         <span class="navbar__notification">7</span>
@@ -57,13 +53,13 @@ import { ref } from "vue";
 import TwitchIcon from "./icons/TwitchIcon";
 import HorizontalDots from "./icons/HorizontalDots";
 import PrimeIcon from "./icons/PrimeIcon";
-import SearchIcon from "./icons/SearchIcon";
 import UserIcon from "./icons/UserIcon";
 import NotificationIcon from "./icons/NotificationIcon";
 import WhisperIcon from "./icons/WhisperIcon";
 import BitsIcon from "./icons/BitsIcon";
 
 import BaseButton from "./BaseButton";
+import SearchBar from "./SearchBar";
 
 export default {
   setup() {
@@ -77,12 +73,12 @@ export default {
       TwitchIcon,
       HorizontalDots,
       PrimeIcon,
-      SearchIcon,
       UserIcon,
       NotificationIcon,
       WhisperIcon,
       BitsIcon,
       BaseButton,
+      SearchBar,
       isLogged,
       logIn,
     };
@@ -95,7 +91,6 @@ export default {
   // margin: -8px -6px;
   height: 5rem;
   display: flex;
-  z-index: 100;
 
   align-items: center;
   // overflow: hidden;
@@ -224,43 +219,5 @@ export default {
     }
   }
 }
-.search {
-  flex: 0 0 25%;
-  margin: 7px auto;
-  align-self: stretch;
-  display: flex;
 
-  &__input {
-    font-family: inherit;
-    border-radius: 6px 0 0 6px;
-    min-width: 37rem;
-    max-width: 37rem;
-    border: none;
-    padding-left: 1.5rem;
-    margin-right: 0.1rem;
-
-    // font-size: inherit;
-    background-color: var(--color-grey-dark-4);
-
-    &:focus {
-      outline: none;
-      border: 2px solid var(--color-primary);
-      background-color: #000;
-      outline-offset: 0;
-    }
-    &::-webkit-input-placeholder {
-      font-weight: 500;
-      color: var(--color-grey-light);
-    }
-  }
-  // &__input:focus + &__button {
-  //   background-color: #000;
-  // }
-  &__button {
-    background-color: var(--color-grey-dark-2);
-    border-radius: 0 6px 6px 0;
-    padding: 0 0.5rem;
-    border: none;
-  }
-}
 </style>
