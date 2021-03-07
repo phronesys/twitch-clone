@@ -16,19 +16,30 @@ import "vueperslides/dist/vueperslides.css";
 export default {
   data: () => ({
     slides: [
-      {video: "https://youtube.com/embed/8TCxE0bWQeQ?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"},
+      {
+        video:
+          "https://youtube.com/embed/saskdSshNFg?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
+      {
+        video:
+          "https://youtube.com/embed/8TCxE0bWQeQ?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
       {
         video:
           "https://youtube.com/embed/Z_DWo_HqXws?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
       },
-      {video:"https://youtube.com/embed/c7BVtGnlxT8?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"},
+      {
+        video:
+          "https://youtube.com/embed/c7BVtGnlxT8?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
       {
         video:
           "https://www.youtube.com/embed/2Jk26leBaEc?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
       },
       {
-        video: "https://youtube.com/embed/dddR4ZpTDC0?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1"
-      }
+        video:
+          "https://youtube.com/embed/dddR4ZpTDC0?controls=0&fs=0&modestbranding=1&color=white&iv_load_policy=3&autohide=1&enablejsapi=1",
+      },
     ],
   }),
   components: {
